@@ -1,56 +1,133 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap");
 
+/* General */
 * {
   margin: 0;
-  padding: 0 auto;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
-  margin-bottom: 20px;
-  overflow-x: hidden;
   background-color: #2b4865;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+background-color: #F1F1F1;
+}
+
+html::-webkit-scrollbar-thumb {
+background: #2b4865;
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 1000px;
+  margin: auto;
+  position: relative;
 }
 
+.line {
+  height: 150px;
+  width: 2px;
+  margin-top: 20px;
+}
+
+.btnUp{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+.btnUp a{
+  text-decoration: none;
+  color: #256D85;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.btnUp a:hover{
+  color: #319DA0;
+  transition: all 0.3s ease;
+}
+
+/* Nav CSS */
 nav {
   width: 100%;
-  background-color: #002b5b;
-  line-height: 60px;
-  text-align: center;
+  background-color: #256D85;
+  line-height: 50px;
+  text-align: right;
   color: white;
-  margin-bottom: 20px;
+  position: fixed;
+  z-index: 3;
 }
 
-.flexContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-header {
+nav ul li {
+  display: inline-block;
   position: relative;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav .navBar {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+
+nav .navBar::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 0px;
+  background-color: white;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+nav .navBar:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Section About */
+.myWaves{
+  position: absolute;
+  top: 0px;
+  right: -600px;
+  rotate: 180deg;
+  z-index: 1;
+  width: 2000px;
+}
+
+.about {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
 }
 
-header .imgHeader {
-  width: 140px;
-  height: 140px;
+.about .imgAbout {
+  width: 200px;
+  height: 200px;
 }
 
-header .imgHeader .myPhoto {
+.about .imgAbout .myPhoto {
   width: 100%;
   height: 100%;
   border: 3px solid white;
@@ -58,39 +135,24 @@ header .imgHeader .myPhoto {
   object-fit: cover;
 }
 
-header .nameHeader {
+.about .nameHeader {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-header .nameHeader .myName {
+.about .nameHeader .myName {
   color: white;
   font-size: 28px;
   font-weight: bold;
 }
 
-header .sosmedHeader {
-  margin-top: -10px;
-}
-
-header .sosmedHeader a {
-  font-size: 25px;
-  color: white;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-header .sosmedHeader a:hover {
-  color: darkgrey;
-}
-
-header .motoHeader {
+.about .motoHeader {
   margin: 0;
   padding: 0 auto;
 }
 
-header .motoHeader p {
-  padding: 20px;
+.about .motoHeader p {
+  padding: 5px;
   color: white;
   text-align: justify;
   hyphens: auto;
@@ -98,36 +160,87 @@ header .motoHeader p {
   word-spacing: -0.05em;
 }
 
-section {
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+/* Section Project */
+.project{
+    overflow: hidden;
 }
 
-.myPortfolio {
-  margin: 0;
-  padding: 0 auto;
+.project .projectContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.project .projectTitle {
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .card {
   border: 3px solid white;
-  border-radius: 15px;
-  margin: 15px;
+  border-radius: 5px;
+  width: 320px;
+  margin: 10px 5px;
   padding: 20px;
   color: white;
-  -webkit-box-shadow: 9px 9px 17px -3px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 9px 9px 17px -3px rgba(0, 0, 0, 0.75);
-  box-shadow: 9px 9px 17px -3px rgba(0, 0, 0, 0.75);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+.cardHeader{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 40px;
+}
+
+.cardLogo{
+  color: #319DA0;
+}
+
+.cardInfo{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cardButton {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.cardButton a{
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.cardButton a:hover {
+  color: #319DA0;
 }
 
 .cardTitle h1 {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 10px;
+  line-height: normal;
+  min-height: 50px;
 }
 
 .cardBody {
   margin-bottom: 10px;
+  min-height: 150px;
+  max-height: 150px;
+  overflow: hidden;
 }
 
 .cardBody p {
@@ -138,45 +251,68 @@ section {
   margin-bottom: 20px;
 }
 
-.cardButton {
+.cardFooter{
   width: 100%;
-  text-align: right;
+  text-align: center;
 }
 
-.cardButton a {
-  width: 80px;
-  padding: 8px 16px;
-  text-decoration: none;
-  background-color: #002b5b;
-  border: 2px solid white;
-  border-radius: 25px;
+.cardFooter ul li{
+  display: inline-block;
+}
+
+.cardFooter ul li i{
+  font-size: 30px;
+  margin: 5px;
+  opacity: 0.7;
+}
+
+
+/* Medsos Icon */
+.sosmed {
+  margin-top: -10px;
+  position: fixed;
+  left: 30px;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sosmed a {
+  font-size: 25px;
+  margin: 10px;
   color: white;
-  transition: all 0.5s ease;
-  cursor: pointer;
-  font-weight: 600;
+  text-decoration: none;
+  transform: scale(1) translate(0px, 0px);
+  transition: transform 0.5s ease-out;
 }
 
-.cardButton a:hover {
-  background-color: #607eaa;
+.sosmed a:hover {
+  color: #319DA0;
+  transform: scale(1.1) translate(0px, -5px);
+  transition: transform 0.25s ease-out;
 }
 
-@media screen and (min-width: 375px) {
+/* @Media For A Screen */
+/* @media screen and (min-width: 375px) {
 }
 @media screen and (min-width: 411px) {
 }
 @media screen and (min-width: 540px) {
 }
 @media screen and (min-width: 768px) {
-  header .imgHeader {
+  .about .imgHeader {
     width: 240px;
     height: 240px;
   }
 
-  header .nameHeader .myName {
+  .about .nameHeader .myName {
     font-size: 32px;
   }
 
-  header .sosmedHeader a {
+  .about .sosmedHeader a {
     font-size: 28px;
   }
 
@@ -193,7 +329,7 @@ section {
     font-size: 20px;
   }
 
-  header .motoHeader p {
+  .about .motoHeader p {
     font-size: 20px;
   }
 }
@@ -202,31 +338,27 @@ section {
     margin: 0px 50px;
   }
 
-  header {
+  .about {
     padding-right: 10px;
     padding-left: 10px;
     width: 900px;
   }
 
-  header .nameHeader .myName {
+  .about .nameHeader .myName {
     font-size: 26px;
   }
 
-  header .motoHeader p {
+  .about .motoHeader p {
     font-size: 16px;
   }
 
-  header .sosmedHeader a {
+  .about .sosmedHeader a {
     font-size: 20px;
   }
 
-  header .imgHeader {
+  .about .imgHeader {
     width: 200px;
     height: 200px;
-  }
-
-  .flexContainer {
-    flex-direction: row;
   }
 
   .cardTitle h1 {
@@ -245,78 +377,4 @@ section {
 @media screen and (min-width: 1280px) {
 }
 @media screen and (min-width: 1440px) {
-}
-
-/* Button Back To Top */
-
-#button-up {
-  position: fixed;
-  right: 8px;
-  bottom: 10px;
-  visibility: hidden;
-  z-index: 9999;
-}
-
-#button-up i {
-  width: 30px;
-  height: 30px;
-  background-color: #65c598;
-  border-radius: 50%;
-}
-
-#button-up.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s;
-  animation: fadein 0.5s;
-}
-
-#button-up.button-up {
-  -webkit-animation: fadeout 0.5s 2.5s;
-  animation: fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-  from {
-    bottom: 0;
-    opacity: 0;
-  }
-  to {
-    bottom: 30px;
-    opacity: 1;
-  }
-}
-
-@keyframes fadein {
-  from {
-    bottom: 0;
-    opacity: 0;
-  }
-  to {
-    bottom: 10px;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeout {
-  from {
-    bottom: 10px;
-    opacity: 1;
-  }
-  to {
-    bottom: 0;
-    opacity: 0;
-  }
-}
-
-@keyframes fadeout {
-  from {
-    bottom: 30px;
-    opacity: 1;
-  }
-  to {
-    bottom: 0;
-    opacity: 0;
-  }
-}
-
-/* End Button Back To Top */
+} */

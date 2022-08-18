@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
-    <link rel="icon" href="assets/image/my-icon.png" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="assets/image/logo.png" />
+
+    <!-- FontAwesome CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
@@ -14,186 +15,178 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- AOS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <nav>
-        <h1>Welcome to My Portfolio</h1>
-    </nav>
-    
-    <div class="container">
-      <div class="flexContainer">
-        <header data-aos="fade-up">
-          <div class="imgHeader">
+    <!-- Button Back To Top -->
+    <div class="btnUp" data-aos="fade-up" data-aos-delay="1000">
+      <a href="#">
+        <i class="fa-solid fa-circle-arrow-up fa-2xl"></i>
+      </a>
+    </div>
+
+    <!-- This Header => Nav -->
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a
+              class="navBar"
+              href="#about"
+              data-aos="fade-down"
+              data-aos-delay="500"
+              >About Me</a
+            >
+          </li>
+          <li>
+            <a
+              class="navBar"
+              href="#"
+              data-aos="fade-down"
+              data-aos-delay="1000"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a
+              class="navBar"
+              href="#project"
+              data-aos="fade-down"
+              data-aos-delay="1500"
+              >Project</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- This Main => All Content -->
+    <main>
+      <div class="container">
+        <!-- About Section -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          class="myWaves"
+        >
+          <path
+            fill="#256D85"
+            d="M0,256L18.5,240C36.9,224,74,192,111,160C147.7,128,185,96,222,80C258.5,64,295,64,332,85.3C369.2,107,406,149,443,154.7C480,160,517,128,554,138.7C590.8,149,628,203,665,234.7C701.5,267,738,277,775,245.3C812.3,213,849,139,886,138.7C923.1,139,960,213,997,208C1033.8,203,1071,117,1108,90.7C1144.6,64,1182,96,1218,138.7C1255.4,181,1292,235,1329,250.7C1366.2,267,1403,245,1422,234.7L1440,224L1440,320L1421.5,320C1403.1,320,1366,320,1329,320C1292.3,320,1255,320,1218,320C1181.5,320,1145,320,1108,320C1070.8,320,1034,320,997,320C960,320,923,320,886,320C849.2,320,812,320,775,320C738.5,320,702,320,665,320C627.7,320,591,320,554,320C516.9,320,480,320,443,320C406.2,320,369,320,332,320C295.4,320,258,320,222,320C184.6,320,148,320,111,320C73.8,320,37,320,18,320L0,320Z"
+          ></path>
+        </svg>
+
+        <section class="about" id="about">
+          <div class="imgAbout">
             <img
               class="myPhoto"
               src="assets/image/myPhoto.jpg"
               alt="My Photo"
+              data-aos="fade-left"
+              data-aos-delay="1000"
             />
           </div>
           <div class="nameHeader">
-            <span class="myName">Leonardo G.S</span>
-          </div>
-          <div class="sosmedHeader">
-            <a href="https://linkedin.com/in/leonardo-gs974" target="_blank">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/leonardogs974" target="_blank">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.instagram.com/leonardo_gs12/" target="_blank">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
+            <span class="myName" data-aos="fade-left" data-aos-delay="1500"
+              >Leonardo G.S</span
+            >
           </div>
           <div class="motoHeader">
-            <p>
+            <p data-aos="fade-right" data-aos-delay="1500">
               Nama saya Leonardo G.S bisa dipanggil Leo dan saat ini saya
               berusia 22 Tahun, serta pada tahun ini juga saya berhasil
               menyelesaikan studi saya di Universitas Multi Data Palembang
-              Jurusan Teknik Informatika dengan IPK 3.96 / 4.
+              Jurusan Teknik Informatika dengan IPK 3.96 / 4. Walau pun saya
+              baru menyelesaikan studi, tetapi saya memiliki beberapa pengalaman
+              pekerjaan dimana semasa berkuliah, saya berkuliah sambil bekerja
+              dengan pembagian waktu yaitu pagi sampai sore bekerja lalu
+              dilanjutkan dari sore sampai malam berkuliah, serta saya juga
+              mulai bekerja dari SMA.
+            </p>
+            <p data-aos="fade-right" data-aos-delay="2000">
+              Saya sangat tertarik pada bidang teknologi informasi terkhususnya
+              pada Front-End Web Developer yang semakin berkembang, serta
+              memiliki berbagai fitur yang baru dan menarik untuk dipelajari dan
+              diterapkan.
+            </p>
+            <p data-aos="fade-right" data-aos-delay="2500">
+              Serta yang terakhir yaitu menurut saya pencapaian terbesar dalam
+              hidup saya adalah saya tidak pernah merepotkan orang lain dalam
+              urusan pribadi saya, dimana saya telah mencari uang untuk biaya
+              sekolah dan kuliah saya secara pribadi tanpa melibatkan peran
+              orang tua saya.
             </p>
           </div>
-        </header>
+        </section>
 
-        <section class="myPortfolio">
-          <div class="card" data-aos="fade-left">
-            <div class="cardTitle">
-              <h1>Aplikasi Catatan - With React</h1>
-            </div>
-            <div class="cardBody">
-              <p>
-                Aplikasi ini adalah salah satu program yang saya buat untuk
-                menyelesaikan submission dari kelas online Dicoding yaitu
-                Belajar Membuat Aplikasi Web Dengan React
-              </p>
-            </div>
-            <div class="cardButton">
-              <a href="https://leonardogs974.github.io/Aplikasi-Catatan-With-React/" target="_blank">Lihat Aplikasi</a>
-            </div>
+        <!-- Experience Section -->
+        <section class="experience" id="experience"></section>
+
+        <!-- Project Section -->
+        <section class="project" id="project">
+          <div class="projectTitle">
+            <h1 data-aos="fade-up">My Learning Project</h1>
           </div>
 
-          <div class="card" data-aos="fade-left">
-            <div class="cardTitle">
-              <h1>Aplikasi Contact - With React</h1>
-            </div>
-            <div class="cardBody">
-              <p>
-                Aplikasi ini adalah salah satu program yang saya buat untuk
-                latihan pada kelas online Dicoding yaitu Belajar Membuat
-                Aplikasi Web Dengan React
-              </p>
-            </div>
-            <div class="cardButton">
-              <a href="https://leonardogs974.github.io/Aplikasi-Contact-With-React/" target="_blank">Lihat Aplikasi</a>
-            </div>
-          </div>
-
-          <div class="card" data-aos="fade-left">
-            <div class="cardTitle">
-              <h1>Website Mamalia</h1>
-            </div>
-            <div class="cardBody">
-              <p>
-                Website ini adalah salah satu Submission yang saya buat untuk
-                menyelesaikan kelas online pada Dicoding, dimana pada aplikasi
-                ini dibuat beberapa section tentang hewan Mamalia serta
-                menggunakan JS untuk membuat suara hewan keluar ketika diklik.
-              </p>
-            </div>
-            <div class="cardButton">
-              <a href="https://leonardogs974.github.io/Website-Mamalia/" target="_blank">Lihat Aplikasi</a>
-            </div>
-          </div>
-
-          <div class="card" data-aos="fade-left">
-            <div class="cardTitle">
-              <h1>Website CV - With Dicoding</h1>
-            </div>
-            <div class="cardBody">
-              <p>
-                Website ini adalah salah satu Submission yang digunakan untuk
-                menyelesaikan kelas online dari Dicoding, dimana pada website
-                ini berisikan tentang beberapa profile saya.
-              </p>
-            </div>
-            <div class="cardButton">
-              <a href="https://leonardogs974.github.io/Website-CV-With-Dicoding/" target="_blank">Lihat Aplikasi</a>
-            </div>
-          </div>
-
-          <div class="card" data-aos="fade-left">
-            <div class="cardTitle">
-              <h1>User Card Learn From Youtube</h1>
-            </div>
-            <div class="cardBody">
-              <p>
-                Ini adalah salah satu design User Card yang saya pelajari dari
-                youtube yang dimana saya melakukan beberapa perubahan dan
-                penambahan pada cardnya
-              </p>
-            </div>
-            <div class="cardButton">
-              <a href="https://leonardogs974.github.io/User-Card-Learn-From-Youtube/" target="_blank">Lihat Aplikasi</a>
-            </div>
-          </div>
-
-          <div class="card" data-aos="fade-left">
-            <div class="cardTitle">
-              <h1>Aplikasi Todo</h1>
-            </div>
-            <div class="cardBody">
-              <p>
-                Aplikasi ini adalah salah satu pembelajaran yang saya pelajari
-                dari salah satu kelas online pada Dicoding yaitu Belajar Membuat
-                Front-End Web untuk Pemula.
-              </p>
-            </div>
-            <div class="cardButton">
-              <a href="https://leonardogs974.github.io/Aplikasi-Todo/" target="_blank">Lihat Aplikasi</a>
-            </div>
-          </div>
-
-          <div class="card" data-aos="fade-left">
-            <div class="cardTitle">
-              <h1>Aplikasi Bookshelf</h1>
-            </div>
-            <div class="cardBody">
-              <p>
-                Aplikasi ini adalah salah satu Submission yang saya buat untuk
-                menyelesaikan salah satu kelas online pada Dicoding yaitu
-                Belajar Membuat Front-End Web untuk Pemula.
-              </p>
-            </div>
-            <div class="cardButton">
-              <a href="https://leonardogs974.github.io/Aplikasi-Bookshelf/" target="_blank">Lihat Aplikasi</a>
-            </div>
-          </div>
-
-          <div class="card" data-aos="fade-left">
-            <div class="cardTitle">
-              <h1>Skripsi Analisis Sentimen Twitter</h1>
-            </div>
-            <div class="cardBody">
-              <p>
-                Aplikasi ini saya buat untuk menyelesaikan pendidikan saya pada
-                jenjang S1 dengan judul Analisis Sentimen Pengguna Twitter
-                Terhadap Pembelakuan PPKM di Indonesia Menggunakan Metode Naive
-                Bayes. Dimana pada hasil penelitian ini dinyatakan bahwa
-                sebagian besar warga negara Indonesia menerima diberlakukannya
-                PPKM.
-              </p>
-            </div>
-            <div class="cardButton">
-              <!-- <a href="#">Lihat Aplikasi</a> -->
-            </div>
+          <div class="projectContent" id="projectContent">
           </div>
         </section>
       </div>
+    </main>
+
+    <!-- <footer></footer> -->
+
+    <div class="sosmed">
+      <a
+        href="https://api.whatsapp.com/send?phone=6281532618646"
+        target="_blank"
+      >
+        <i
+          class="fa-brands fa-whatsapp"
+          data-aos="fade-up"
+          data-aos-delay="3000"
+        ></i>
+      </a>
+      <a href="https://linkedin.com/in/leonardo-gs974" target="_blank">
+        <i
+          class="fa-brands fa-linkedin-in"
+          data-aos="fade-up"
+          data-aos-delay="2500"
+        ></i>
+      </a>
+      <a href="https://github.com/leonardogs974" target="_blank">
+        <i
+          class="fa-brands fa-github"
+          data-aos="fade-up"
+          data-aos-delay="2000"
+        ></i>
+      </a>
+      <a href="https://www.instagram.com/leonardo_gs12/" target="_blank">
+        <i
+          class="fa-brands fa-instagram"
+          data-aos="fade-up"
+          data-aos-delay="1500"
+        ></i>
+      </a>
+      <a href="mailto:leonardogs974@gmail.com" target="_blank">
+        <i
+          class="fa-regular fa-envelope"
+          data-aos="fade-up"
+          data-aos-delay="1000"
+        ></i>
+      </a>
+      <hr class="line" data-aos="fade-up" data-aos-delay="500" />
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
+
+    <script src="assets/js/card.js"></script>
   </body>
 </html>
