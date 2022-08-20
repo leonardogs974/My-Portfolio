@@ -65,8 +65,6 @@ for (let i = 0; i <= dataCard.length - 1; i++) {
   //Create Element
   let card = document.createElement("div");
   card.classList.add("card");
-  card.setAttribute("data-aos", "fade-up");
-  card.setAttribute("data-aos-delay", 50*(i+1));
   
   let cardHeader = document.createElement("div");
   cardHeader.classList.add("cardHeader");

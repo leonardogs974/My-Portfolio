@@ -46,7 +46,7 @@
           <li>
             <a
               class="navBar"
-              href="#"
+              href="#experience"
               data-aos="fade-down"
               data-aos-delay="1000"
               >Experience</a
@@ -75,7 +75,7 @@
           class="myWaves"
         >
           <path
-            fill="#256D85"
+            fill="#607EAA"
             d="M0,256L18.5,240C36.9,224,74,192,111,160C147.7,128,185,96,222,80C258.5,64,295,64,332,85.3C369.2,107,406,149,443,154.7C480,160,517,128,554,138.7C590.8,149,628,203,665,234.7C701.5,267,738,277,775,245.3C812.3,213,849,139,886,138.7C923.1,139,960,213,997,208C1033.8,203,1071,117,1108,90.7C1144.6,64,1182,96,1218,138.7C1255.4,181,1292,235,1329,250.7C1366.2,267,1403,245,1422,234.7L1440,224L1440,320L1421.5,320C1403.1,320,1366,320,1329,320C1292.3,320,1255,320,1218,320C1181.5,320,1145,320,1108,320C1070.8,320,1034,320,997,320C960,320,923,320,886,320C849.2,320,812,320,775,320C738.5,320,702,320,665,320C627.7,320,591,320,554,320C516.9,320,480,320,443,320C406.2,320,369,320,332,320C295.4,320,258,320,222,320C184.6,320,148,320,111,320C73.8,320,37,320,18,320L0,320Z"
           ></path>
         </svg>
@@ -124,7 +124,67 @@
         </section>
 
         <!-- Experience Section -->
-        <section class="experience" id="experience"></section>
+        <section class="experience" id="experience">
+          <h1 data-aos="fade-up" data-aos-delay="500">My Experience</h1>
+          <div class="expMain" data-aos="fade-up" data-aos-delay="1000">
+            <div class="expNav">
+              <ul>
+                <li class="active" id="navItem">Sekolah Methodist 2 Palembang</li>
+                <li id="navItem">Vittindo Palembang</li>
+              </ul>
+            </div>
+            <div class="expContent">
+              <ul>
+                <li class="active" id="contentItem">
+                  <ol>
+                    <li>
+                      Membantu tenaga pengajar baik itu secara software maupun
+                      hardware yang digunakan dalam kegiatan belajar mengajar
+                      selama masa pandemi atau online learning.
+                    </li>
+                    <li>
+                      Mengambil dan mengedit foto serta video untuk kepentingan
+                      dokumentasi kegiatan siswa, konten pembelajaran, dan juga
+                      perlombaan siswa.
+                    </li>
+                    <li>
+                      Mendekorasi serta membuat konsep untuk video lomba siswa
+                      dari tema yang diberikan.
+                    </li>
+                    <li>
+                      Membuat website Kartu Pelajar Online yang dapat diakses
+                      oleh siswa dari mana saja, dan dapat men-download kartu
+                      perlajarnya serta digunakan oleh semua tingkatan dari
+                      Sekolah Methodist 2 Palembang.
+                    </li>
+                    <li>
+                      Membuat website Pengumuman Kelulusan, yang dapat
+                      memberikan informasi kepada siswa/i kelas 12 pada
+                      tingkatan SMK bahwa mereka dinyatakan lulus atau tidak.
+                    </li>
+                  </ol>
+                </li>
+                <li id="contentItem">
+                  <ol>
+                    <li>
+                      Melakukan pengecekan hardware dari perangkat komputer dan
+                      juga laptop serta mengganti hardwawe-nya bila terjadi
+                      kerusakan atau juga upgrade.
+                    </li>
+                    <li>
+                      Menjadi support dalam pemasangan CCTV, yaitu penarikan
+                      kabel dan memesang CCTV pada titik yang telah ditentukan.
+                    </li>
+                    <li>
+                      Terlibat dalam pembuatan website profile company untuk
+                      suatu sekolahan (Sekolah Maitreyawira Palembang).
+                    </li>
+                  </ol>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
         <!-- Project Section -->
         <section class="project" id="project">
@@ -132,13 +192,14 @@
             <h1 data-aos="fade-up">My Learning Project</h1>
           </div>
 
-          <div class="projectContent" id="projectContent">
-          </div>
+          <div class="projectContent" id="projectContent"></div>
         </section>
       </div>
     </main>
 
-    <!-- <footer></footer> -->
+    <footer>
+      <span>Created by Leonardo G.S - Animation With <b>AOS</b></span>
+    </footer>
 
     <div class="sosmed">
       <a
@@ -188,5 +249,25 @@
     </script>
 
     <script src="assets/js/card.js"></script>
+    <script>
+      let datax = document.querySelectorAll("#navItem");
+      let datax2 = document.querySelectorAll("#contentItem");
+      //   console.log(datax[0].className);
+
+      for (let i = 0; i < datax.length; i++) {
+        datax[i].addEventListener("click", () => {
+          if (datax[i].className != "active") {
+            for (let j = 0; j < datax.length; j++) {
+              if (j != i) {
+                datax[j].classList.remove("active");
+                datax2[j].classList.remove("active");
+              }
+            }
+            datax[i].classList.add("active");
+            datax2[i].classList.add("active");
+          }
+        });
+      }
+    </script>
   </body>
 </html>

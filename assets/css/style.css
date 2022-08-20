@@ -10,7 +10,7 @@
 
 html,
 body {
-  background-color: #2b4865;
+  background-color: #1c3879;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -20,11 +20,11 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-background-color: #F1F1F1;
+  background-color: #f1f1f1;
 }
 
 html::-webkit-scrollbar-thumb {
-background: #2b4865;
+  background: #1c3879;
 }
 
 .container {
@@ -39,32 +39,34 @@ background: #2b4865;
   margin-top: 20px;
 }
 
-.btnUp{
+.btnUp {
   position: fixed;
   right: 30px;
   bottom: 30px;
 }
 
-.btnUp a{
+.btnUp a {
   text-decoration: none;
-  color: #256D85;
+  color: white;
   font-size: 20px;
   transition: all 0.3s ease;
 }
 
-.btnUp a:hover{
-  color: #319DA0;
+.btnUp a:hover {
+  color: #0096ff;
   transition: all 0.3s ease;
 }
 
 /* Nav CSS */
 nav {
   width: 100%;
-  background-color: #256D85;
+  background-color: #607eaa;
   line-height: 50px;
   text-align: right;
   color: white;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 3;
 }
 
@@ -101,7 +103,7 @@ nav .navBar:hover::after {
 }
 
 /* Section About */
-.myWaves{
+.myWaves {
   position: absolute;
   top: 0px;
   right: -600px;
@@ -125,6 +127,7 @@ nav .navBar:hover::after {
 .about .imgAbout {
   width: 200px;
   height: 200px;
+  margin-bottom: 20px;
 }
 
 .about .imgAbout .myPhoto {
@@ -160,9 +163,74 @@ nav .navBar:hover::after {
   word-spacing: -0.05em;
 }
 
+/* Section Experience */
+.experience {
+  width: 100%;
+  color: white;
+  margin-bottom: 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.experience > h1 {
+  text-align: center;
+}
+
+.expMain {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.expMain .expNav ul li {
+  list-style-type: none;
+  padding: 10px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.expNav {
+  width: 30%;
+}
+
+.expContent {
+  width: 70%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.expContent ul > li {
+  list-style-type: none;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.expContent ul > li ol > li {
+  padding: 5px;
+}
+
+.expContent #contentItem {
+  display: none;
+}
+
+.expContent .active {
+  display: block !important;
+}
+
+.active {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
 /* Section Project */
-.project{
-    overflow: hidden;
+.project {
+  overflow: hidden;
 }
 
 .project .projectContent {
@@ -188,26 +256,27 @@ nav .navBar:hover::after {
   position: relative;
   display: flex;
   flex-direction: column;
+  transform: translate(0px, 0px);
+  transition: transform 0.5s ease;
 }
 
 .card:hover {
-  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.75);
+  transform: translate(0px, -10px);
+  transition: transform 0.5s ease;
 }
 
-.cardHeader{
+.cardHeader {
   width: 100%;
   display: flex;
   flex-direction: column;
   line-height: 40px;
 }
 
-.cardLogo{
-  color: #319DA0;
+.cardLogo {
+  color: #0096ff;
 }
 
-.cardInfo{
+.cardInfo {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -219,14 +288,14 @@ nav .navBar:hover::after {
   font-size: 20px;
 }
 
-.cardButton a{
+.cardButton a {
   text-decoration: none;
   color: white;
   transition: all 0.5s ease;
 }
 
 .cardButton a:hover {
-  color: #319DA0;
+  color: #0096ff;
 }
 
 .cardTitle h1 {
@@ -251,21 +320,20 @@ nav .navBar:hover::after {
   margin-bottom: 20px;
 }
 
-.cardFooter{
+.cardFooter {
   width: 100%;
   text-align: center;
 }
 
-.cardFooter ul li{
+.cardFooter ul li {
   display: inline-block;
 }
 
-.cardFooter ul li i{
+.cardFooter ul li i {
   font-size: 30px;
   margin: 5px;
   opacity: 0.7;
 }
-
 
 /* Medsos Icon */
 .sosmed {
@@ -290,51 +358,209 @@ nav .navBar:hover::after {
 }
 
 .sosmed a:hover {
-  color: #319DA0;
+  color: #0096ff;
   transform: scale(1.1) translate(0px, -5px);
   transition: transform 0.25s ease-out;
 }
 
+footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #607eaa;
+  color: white;
+}
+
 /* @Media For A Screen */
-/* @media screen and (min-width: 375px) {
+@media screen and (min-width: 375px) {
+  .container {
+    width: 350px;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .sosmed {
+    display: none;
+  }
+
+  .btnUp {
+    bottom: 70px;
+    right: 20px;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  .about {
+    height: 145vh;
+  }
+
+  .experience {
+    margin-top: -80px;
+  }
+
+  .expMain {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .expNav {
+    width: 100%;
+  }
+
+  .expMain .expNav ul li {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .expContent {
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+  }
+  .card {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer {
+    font-size: 15px;
+  }
 }
 @media screen and (min-width: 411px) {
+  .container {
+    width: 350px;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .sosmed {
+    display: none;
+  }
+
+  .btnUp {
+    bottom: 70px;
+    right: 20px;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  .about {
+    height: 145vh;
+  }
+
+  .experience {
+    margin-top: -120px;
+  }
+
+  .expMain {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .expNav {
+    width: 100%;
+  }
+
+  .expMain .expNav ul li {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .expContent {
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+  }
+  .card {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer {
+    font-size: 15px;
+  }
 }
-@media screen and (min-width: 540px) {
-}
+/* @media screen and (min-width: 540px) {
+
+} */
 @media screen and (min-width: 768px) {
-  .about .imgHeader {
-    width: 240px;
-    height: 240px;
+  .container {
+    width: 700px;
   }
 
-  .about .nameHeader .myName {
-    font-size: 32px;
+  .line {
+    display: none;
   }
 
-  .about .sosmedHeader a {
-    font-size: 28px;
+  .sosmed {
+    display: none;
+  }
+
+  .btnUp {
+    bottom: 70px;
+    right: 20px;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  .about {
+    height: 80vh;
+    margin-bottom: 100px;
+  }
+
+  .expMain {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .expNav {
+    width: 100%;
+  }
+
+  .expMain .expNav ul li {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .expContent {
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+  }
+  .card {
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+  }
+
+  footer {
+    font-size: 15px;
+  }
+
+  .project .projectContent {
+    justify-content: center;
+  }
+
+  .cardBody {
+    margin-bottom: 10px;
+    min-height: 150px;
+    max-height: 150px;
+    overflow: hidden;
   }
 
   .cardTitle h1 {
-    font-size: 24px;
-  }
-
-  .cardBody p {
-    font-size: 20px;
-  }
-
-  .cardButton a {
-    width: 120px;
-    font-size: 20px;
-  }
-
-  .about .motoHeader p {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 1024px) {
-  .container {
+  /* .container {
     margin: 0px 50px;
   }
 
@@ -372,9 +598,76 @@ nav .navBar:hover::after {
   .cardButton a {
     width: 120px;
     font-size: 12px;
-  }
+  } */
 }
 @media screen and (min-width: 1280px) {
+  .container {
+    width: 1000px;
+  }
+
+  .line {
+    display: block;
+  }
+
+  .sosmed {
+    display: flex;
+  }
+
+  .btnUp {
+    bottom: 70px;
+    right: 20px;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  .about {
+    height: 100vh;
+    margin-bottom: 100px;
+  }
+
+  .expMain {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .expNav {
+    width: 100%;
+  }
+
+  .expMain .expNav ul li {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .expContent {
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+  }
+  .card {
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+  }
+
+  footer {
+    font-size: 15px;
+  }
+
+  .project .projectContent {
+    justify-content: left;
+  }
+
+  .cardBody {
+    margin-bottom: 10px;
+    min-height: 150px;
+    max-height: 150px;
+    overflow: hidden;
+  }
+
+  .cardTitle h1 {
+    font-size: 16px;
+  }
 }
 @media screen and (min-width: 1440px) {
-} */
+}
