@@ -141,12 +141,20 @@ nav .navBar:hover::after {
 .about .nameHeader {
   margin-top: 10px;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .about .nameHeader .myName {
   color: white;
   font-size: 28px;
   font-weight: bold;
+}
+
+.about .nameHeader span{
+  color: white;
+  font-weight: 600;
 }
 
 .about .motoHeader {
