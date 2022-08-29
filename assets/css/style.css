@@ -625,6 +625,7 @@ footer {
   .about {
     height: 100vh;
     margin-bottom: 100px;
+    margin-top: 20px;
   }
 
   .expMain {
