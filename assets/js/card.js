@@ -60,90 +60,58 @@ let dataCard = [
 
 //Inisialisasi Variable
 const projectContent = document.getElementById("projectContent");
+let cardStack = "";
 
-for (let i = 0; i <= dataCard.length - 1; i++) {
-  //Create Element
-  let card = document.createElement("div");
-  card.classList.add("card");
-  
-  let cardHeader = document.createElement("div");
-  cardHeader.classList.add("cardHeader");
-
-  let cardBody = document.createElement("div");
-  cardBody.classList.add("cardBody");
-
-  let cardFooter = document.createElement("div");
-  cardFooter.classList.add("cardFooter");
-
-  //Create Element In Card Header
-  let cardInfo = document.createElement("div");
-  cardInfo.classList.add("cardInfo");
-
-  let cardLogo = document.createElement("div");
-  cardLogo.classList.add("cardLogo");
-  
-  let iFolder = document.createElement("i");
-  let cardButton = document.createElement("div");
-  cardButton.classList.add("cardButton");
-  let aButton = document.createElement("a");
-  let abbr = document.createElement("abbr");
-  let iLink = document.createElement("i");
-
-  iFolder.classList.add("fa-regular");
-  iFolder.classList.add("fa-folder");
-  iFolder.classList.add("fa-2xl");
-
-  iLink.classList.add("fa-solid");
-  iLink.classList.add("fa-arrow-up-right-from-square");
-
-  abbr.setAttribute("title", "External Link Web");
-
-  aButton.setAttribute("href", dataCard[i].linkWeb);
-  aButton.setAttribute("target", "_blank");
-  
-  let cardTitle = document.createElement("div");
-  cardTitle.classList.add("cardTitle");
-  let h1 = document.createElement("h1");
-
-  h1.textContent = dataCard[i].titleCard;
-
-  cardTitle.appendChild(h1);
-
-  //Create Element In Card Body
-  let pInBody = document.createElement("p");
-
-  pInBody.textContent = dataCard[i].contentCard;
-
-  cardBody.appendChild(pInBody);
-
-  //Create Element In Card Footer
-  let ul = document.createElement("ul");
-
-  for(let j = 0; j <= dataCard[i].iconProgramLang.length-1; j++){
-      let li = document.createElement("li");
-      let iIcon = document.createElement("i");
-
-      iIcon.classList.add("fa-brands");
-      iIcon.classList.add(dataCard[i].iconProgramLang[j]);
-
-      li.appendChild(iIcon);
-      ul.appendChild(li);
-  }
-
-  cardFooter.appendChild(ul);
-  
-  cardHeader.appendChild(cardInfo);
-  cardHeader.appendChild(cardTitle);
-  cardInfo.appendChild(cardLogo);
-  cardInfo.appendChild(cardButton);
-  cardLogo.appendChild(iFolder);
-  cardButton.appendChild(aButton);
-  aButton.appendChild(abbr);
-  abbr.appendChild(iLink);
-
-  card.appendChild(cardHeader);
-  card.appendChild(cardBody);
-  card.appendChild(cardFooter);
-
-  projectContent.appendChild(card);
+//Function Template Cards
+function cetakCards(myCard, myIcon) {
+  return `<div class="card">
+            <div class="cardHeader">
+              <div class="cardInfo">
+                <div class="cardLogo">
+                  <i class="fa-regular fa-folder fa-2xl"></i>
+                </div>
+                <div class="cardButton">
+                  <a href="${myCard.linkWeb}" target="_blank">
+                    <abbr title="External Link Web">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </abbr>
+                  </a>
+                </div>
+              </div>
+              <div class="cardTitle">
+                <h1>${myCard.titleCard}</h1>
+              </div>
+            </div>
+            <div class="cardBody">
+              <p>${myCard.contentCard}</p>
+            </div>
+            <div class="cardFooter">
+              <ul>
+                ${myIcon}
+              </ul>
+            </div>
+          </div>`;
 }
+
+// Function Template Icons
+function cetakIcon(iconStack) {
+  return `<li>
+            <i class="fa-brands ${iconStack}"></i>
+          </li>`;
+}
+
+//Looping Data Keseluruhan
+dataCard.forEach((datax) => {
+  let iconProgram = '';
+
+  //Generate Icons
+  datax.iconProgramLang.forEach(icons => {
+    iconProgram += cetakIcon(icons);
+  });
+
+  //Combine All Cards
+  cardStack += cetakCards(datax, iconProgram);
+});
+
+// Add All cards 
+projectContent.innerHTML = cardStack;

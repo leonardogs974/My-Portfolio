@@ -119,7 +119,7 @@ nav .navBar:hover::after {
   align-items: center;
   width: 100%;
   height: 100vh;
-  margin-top: 20px;
+  margin-top: 30px;
   position: relative;
   z-index: 2;
 }
@@ -152,7 +152,7 @@ nav .navBar:hover::after {
   font-weight: bold;
 }
 
-.about .nameHeader span{
+.about .nameHeader span {
   color: white;
   font-weight: 600;
 }
@@ -381,7 +381,8 @@ footer {
 }
 
 /* @Media For A Screen */
-@media screen and (min-width: 375px) {
+
+@media only screen and (min-width: 320px) and (max-width: 410px){
   .container {
     width: 350px;
   }
@@ -390,13 +391,29 @@ footer {
     display: none;
   }
 
+  nav ul li {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  nav .navBar {
+    font-size: 16px;
+  }
+
   .sosmed {
-    display: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    background-color: #607eaa;
+    height: 70px;
+    padding-top: 15px;
   }
 
   .btnUp {
-    bottom: 70px;
+    bottom: 85px;
     right: 20px;
+    z-index: 6;
   }
 
   nav {
@@ -404,7 +421,12 @@ footer {
   }
 
   .about {
-    height: 165vh;
+    height: 155vh;
+    margin-top: -10px;
+  }
+
+  .experience{
+    margin-top: -50px;
   }
 
   .expMain {
@@ -416,8 +438,14 @@ footer {
     width: 100%;
   }
 
+  .expNav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
   .expMain .expNav ul li {
     border-radius: 10px 10px 0px 0px;
+    width: 50%;
   }
 
   .expContent {
@@ -434,7 +462,8 @@ footer {
     font-size: 15px;
   }
 }
-@media screen and (min-width: 411px) {
+
+@media only screen and (min-width: 411px) and (max-width: 539px) {
   .container {
     width: 350px;
   }
@@ -444,12 +473,19 @@ footer {
   }
 
   .sosmed {
-    display: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    background-color: #607eaa;
+    height: 70px;
+    padding-top: 15px;
   }
 
   .btnUp {
-    bottom: 70px;
+    bottom: 85px;
     right: 20px;
+    z-index: 6;
   }
 
   nav {
@@ -458,6 +494,11 @@ footer {
 
   .about {
     height: 145vh;
+    margin-top: 10px;
+  }
+
+  .experience{
+    margin-top: -100px;
   }
 
   .expMain {
@@ -469,8 +510,14 @@ footer {
     width: 100%;
   }
 
+  .expNav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
   .expMain .expNav ul li {
     border-radius: 10px 10px 0px 0px;
+    width: 50%;
   }
 
   .expContent {
@@ -487,10 +534,10 @@ footer {
     font-size: 15px;
   }
 }
-/* @media screen and (min-width: 540px) {
+@media only screen and (min-width: 540px) and (max-width: 767px){
 
-} */
-@media screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
   .container {
     width: 700px;
   }
@@ -500,12 +547,19 @@ footer {
   }
 
   .sosmed {
-    display: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    background-color: #607eaa;
+    height: 70px;
+    padding-top: 15px;
   }
 
   .btnUp {
-    bottom: 70px;
+    bottom: 20px;
     right: 20px;
+    z-index: 6;
   }
 
   nav {
@@ -513,8 +567,16 @@ footer {
   }
 
   .about {
-    height: 80vh;
+    height: 90vh;
     margin-bottom: 100px;
+  }
+
+  .motoHeader p {
+    font-size: 18px;
+  }
+
+  .experience{
+    margin-top: -80px;
   }
 
   .expMain {
@@ -600,7 +662,7 @@ footer {
     font-size: 12px;
   } */
 }
-@media screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) and (max-width: 1441px) {
   .container {
     width: 1000px;
   }
@@ -610,7 +672,15 @@ footer {
   }
 
   .sosmed {
+    margin-top: -10px;
+    position: fixed;
+    left: 30px;
+    bottom: 0;
+    z-index: 3;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .btnUp {
@@ -625,6 +695,7 @@ footer {
   .about {
     height: 100vh;
     margin-bottom: 100px;
+    margin-top: 50px;
   }
 
   .expMain {
